@@ -1,6 +1,6 @@
 {
   "name": "@bittu1040/pagination-ng",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": "Bittu Kumar",
   "keywords": ["angular","pagination", "pagination-ui","pagination-component","pagination-ng", "pagination-angular", "server side pagination"],
   "repository": 
@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/bittu1040/pagination-ui-library/issues"
   },
-  "homepage": "https://github.com/bittu1040/pagination-ui-library",
+  "homepage": "https://github.com/bittu1040/pagination-ui-library#readme",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
