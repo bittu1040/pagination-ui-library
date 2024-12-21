@@ -96,4 +96,4 @@ Use the component in your template:
 Contact here if you face any issue while integrating in your angular project
 "[Bittu Kumar ](https://www.linkedin.com/in/bittukumar-web/)"
 
-You are welcome to raise issues/PR for any contribution !!
+You are welcome to raise issues/PR for any contribution !! 
