@@ -2,6 +2,9 @@
 
 A reusable and responsive pagination library built with Angular 17, designed to be customizable and easy to integrate into your Angular applications. 
 
+## How it look: 
+![Pagination Demo](https://github.com/bittu1040/pagination-ui-library/blob/master/projects/pagination-ng/src/assets/pagination%20screen%20shot.jpg)
+
 ## Features
 
 - **Customizable Page Size:** Adjust page size, total pages, and current page dynamically.
@@ -40,8 +43,6 @@ npm install @bittu1040/pagination-ng
 | `pageSizeChange`     | `number`   | Emits the updated page size when the selection is changed. |
 
 
-## How it look: 
-![Pagination Demo](https://github.com/bittu1040/pagination-ui-library/blob/master/projects/pagination-ng/src/assets/pagination%20screen%20shot.jpg)
 
 
 ### Usage
