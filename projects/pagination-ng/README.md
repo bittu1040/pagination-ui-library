@@ -39,6 +39,10 @@ npm install @bittu1040/pagination-ng
 | `pageChange`         | `number`   | Emits the new page number when a page is changed.        |
 | `pageSizeChange`     | `number`   | Emits the updated page size when the selection is changed. |
 
+
+![Pagination Demo](https://github.com/bittu1040/pagination-ui-library/blob/master/projects/pagination-ng/src/assets/pagination%20screen%20shot.jpg)
+
+
 ### Usage
 
 #### Import in Your Component
