@@ -1,24 +1,99 @@
-# PaginationNg
+# Angular pagination library
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+A reusable and responsive pagination library built with Angular 17, designed to be customizable and easy to integrate into your Angular applications. 
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name --project pagination-ng` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project pagination-ng`.
-> Note: Don't forget to add `--project pagination-ng` or else it will be added to the default project in your `angular.json` file. 
+- **Customizable Page Size:** Adjust page size, total pages, and current page dynamically.
+- **Page Navigation:**  Navigate between pages with ease.
+- **Responsive Design:**  Adjusts to various screen sizes for better usability.
+- **Event Emission:**  Emits events for page and page size changes, enabling dynamic data fetching.
+---
 
-## Build
+## Getting Started
 
-Run `ng build pagination-ng` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
 
-## Publishing
+Install the package via npm:
 
-After building your library with `ng build pagination-ng`, go to the dist folder `cd dist/pagination-ng` and run `npm publish`.
+```bash
+npm install @bittu1040/pagination-ng
+```
 
-## Running unit tests
+## API Documentation
 
-Run `ng test pagination-ng` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Inputs
 
-## Further help
+| Input                | Type       | Description                                              |
+|----------------------|------------|----------------------------------------------------------|
+| `currentPageNumber`  | `number`   | The current page number.                                 |
+| `totalPages`         | `number`   | The total number of pages.                               |
+| `currentPageSize`    | `number`   | The current page size (e.g., items per page).            |
+| `pageSizes`          | `number[]` | The array of available page size options.                |
+| `totalItems`         | `number`   | The total number of items in the dataset.                |
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Outputs
+
+| Output               | Type       | Description                                              |
+|----------------------|------------|----------------------------------------------------------|
+| `pageChange`         | `number`   | Emits the new page number when a page is changed.        |
+| `pageSizeChange`     | `number`   | Emits the updated page size when the selection is changed. |
+
+### Usage
+
+#### Import in Your Component
+
+First, import the `PaginationNgComponent` into your Angular component:
+
+```typescript
+import { PaginationNgComponent } from '@bittu1040/pagination-ng';
+
+@Component({
+  selector: 'app-mini-features',
+  standalone: true,
+  imports: [PaginationNgComponent],
+  templateUrl: './mini-features.component.html',
+  styleUrls: ['./mini-features.component.scss']
+})
+export class MiniFeaturesComponent {
+  pageNumber: number = 1;
+  totalPages: number = 10;
+  currentPageSize: number = 20; // Choose a default page size from the pageSizes array
+  pageSizes: number[] = [20, 50, 100];
+  totalItems: number = 200;
+
+  onPageChange(newPage: number): void {
+    this.pageNumber = newPage;
+    console.log(`Page changed to: ${this.pageNumber}`);
+    // Add logic to fetch data for the new page
+  }
+
+  onPageSizeUpdate(newPageSize: number): void {
+    this.currentPageSize = newPageSize;
+    console.log(`Page size updated to: ${this.currentPageSize}`);
+    // Add logic to update the page size and refresh data
+  }
+}
+```
+
+#### Component Template
+
+Use the component in your template:
+
+```html
+<pagination-ng 
+  [currentPageNumber]="pageNumber"
+  [totalPages]="totalPages"
+  [currentPageSize]="currentPageSize"
+  [pageSizes]="pageSizes"
+  [totalItems]="totalItems"
+  (pageChange)="onPageChange($event)"
+  (pageSizeChange)="onPageSizeUpdate($event)"
+></pagination-ng>
+```
+
+## Further help:
+Contact here if you face any issue while integrating in your angular project
+"[Bittu Kumar ](https://www.linkedin.com/in/bittukumar-web/)"
+
+You are welcome to raise issues/PR for any contribution !! 
