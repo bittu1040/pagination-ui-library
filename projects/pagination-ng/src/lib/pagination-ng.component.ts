@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'pagination-ng',
-    imports: [],
     templateUrl: './pagination-ng.component.html',
     styleUrls: ['./pagination-ng.component.scss']
 })
