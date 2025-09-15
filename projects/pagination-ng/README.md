@@ -1,6 +1,6 @@
 # Angular pagination library
 
-A reusable and responsive pagination library built with Angular 17, designed to be customizable and easy to integrate into your Angular applications. 
+A reusable and responsive pagination library supported with Angular 17/18/19, designed to be customizable and easy to integrate into your Angular applications. 
 
 ## How it look: 
 ![Pagination Demo](https://github.com/bittu1040/pagination-ui-library/blob/master/projects/pagination-ng/src/assets/pagination%20screen%20shot.jpg)
