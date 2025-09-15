@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class PaginationNgComponent {
 
-  @Input() currentPageNumber : number = 1;
+  @Input() currentPageNumber: number = 1;
   @Input() totalPages: number = 0;        // total number of pages
   @Input() currentPageSize: number = 10;   // default page size
   @Input() pageSizes: number[] = [10, 20, 50];
@@ -15,28 +15,36 @@ export class PaginationNgComponent {
 
   @Output() pageChange = new EventEmitter<number>();
   @Output() pageSizeChange = new EventEmitter<number>();
-  goToFirstPage(){
+
+  goToFirstPage(): void {
+    if (this.currentPageNumber === 1) return;
     this.currentPageNumber = 1;
     this.pageChange.emit(this.currentPageNumber);
   }
-  goToPreviousPage(){
+
+  goToPreviousPage(): void {
+    if (this.currentPageNumber <= 1) return;
     this.currentPageNumber--;
     this.pageChange.emit(this.currentPageNumber);
   }
-  goToNextPage(){
+
+  goToNextPage(): void {
+    if (this.currentPageNumber >= this.totalPages) return;
     this.currentPageNumber++;
     this.pageChange.emit(this.currentPageNumber);
   }
-  goToLastPage(){
+
+  goToLastPage(): void {
+    if (this.currentPageNumber === this.totalPages) return;
     this.currentPageNumber = this.totalPages;
     this.pageChange.emit(this.currentPageNumber);
   }
 
   onPageSizeChange(newSize: string): void {
     const size = parseInt(newSize, 10);
-    if (size !== this.currentPageSize) {
+    if (size !== this.currentPageSize && !isNaN(size) && size > 0) {
+      this.currentPageSize = size;
       this.pageSizeChange.emit(size);
     }
   }
-
 }
